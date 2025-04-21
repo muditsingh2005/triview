@@ -117,7 +117,12 @@ export class Service {
   }
 
   getFilePreview(fileId) {
-    return this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
+    if (!fileId) return "";
+    console.log(this.bucket.getFileDownload(conf.appwriteBucketId, fileId));
+
+    return this.bucket
+      .getFileDownload(conf.appwriteBucketId, fileId)
+      .toString();
   }
 }
 

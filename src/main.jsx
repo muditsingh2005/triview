@@ -7,14 +7,13 @@ import store from "./store/store.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import { AuthLayout, Login } from "./components/index.js";
-
+import Landing from "./pages/Landing.jsx";
 import AddPost from "./pages/AddPost";
 import Signup from "./pages/Signup";
 import EditPost from "./pages/EditPost";
-
 import Post from "./pages/Post";
-
 import AllPosts from "./pages/AllPosts";
+import AuthContainer from "./layouts/AuthContainer.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,29 +22,16 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <Landing />,
+      },
+      {
+        path: "/home",
         element: <Home />,
-      },
-      {
-        path: "/login",
-        element: (
-          <AuthLayout authentication={false}>
-            <Login />
-          </AuthLayout>
-        ),
-      },
-      {
-        path: "/signup",
-        element: (
-          <AuthLayout authentication={false}>
-            <Signup />
-          </AuthLayout>
-        ),
       },
       {
         path: "/all-posts",
         element: (
           <AuthLayout authentication>
-            {" "}
             <AllPosts />
           </AuthLayout>
         ),
@@ -54,7 +40,6 @@ const router = createBrowserRouter([
         path: "/add-post",
         element: (
           <AuthLayout authentication>
-            {" "}
             <AddPost />
           </AuthLayout>
         ),
@@ -63,7 +48,6 @@ const router = createBrowserRouter([
         path: "/edit-post/:slug",
         element: (
           <AuthLayout authentication>
-            {" "}
             <EditPost />
           </AuthLayout>
         ),
@@ -73,6 +57,22 @@ const router = createBrowserRouter([
         element: <Post />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: (
+      <AuthContainer>
+        <Login />
+      </AuthContainer>
+    ),
+  },
+  {
+    path: "/signup",
+    element: (
+      <AuthContainer>
+        <Signup />
+      </AuthContainer>
+    ),
   },
 ]);
 
