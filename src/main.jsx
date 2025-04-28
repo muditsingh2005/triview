@@ -14,6 +14,7 @@ import EditPost from "./pages/EditPost";
 import Post from "./pages/Post";
 import AllPosts from "./pages/AllPosts";
 import AuthContainer from "./layouts/AuthContainer.jsx";
+import MyProfile from "./pages/MyProfile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,14 @@ const router = createBrowserRouter([
       {
         path: "/post/:slug",
         element: <Post />,
+      },
+      {
+        path: "/profile",
+        element: (
+          <AuthLayout authentication>
+            <MyProfile />
+          </AuthLayout>
+        ),
       },
     ],
   },

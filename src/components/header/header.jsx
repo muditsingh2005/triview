@@ -54,6 +54,11 @@ function Header() {
       slug: "/add-post",
       active: authStatus,
     },
+    {
+      name: "My Profile",
+      slug: "/profile",
+      active: authStatus,
+    },
   ];
 
   // Animation variants
