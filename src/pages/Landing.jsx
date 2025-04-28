@@ -25,7 +25,6 @@ export default function Landing() {
     }
   };
 
-  // Animation variants
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -101,7 +100,7 @@ export default function Landing() {
             alt="Travel landscape"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          <div className="absolute inset-0  bg-opacity-50"></div>
         </div>
 
         <Container>

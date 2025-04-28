@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 
 function Footer() {
-  // Animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -24,7 +23,6 @@ function Footer() {
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          {/* Brand section */}
           <motion.div
             className="md:col-span-4"
             initial="initial"
@@ -140,7 +138,6 @@ function Footer() {
   );
 }
 
-// Helper components
 function SocialIcon({ icon }) {
   return (
     <motion.a
